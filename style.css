@@ -1,0 +1,196 @@
+/* ===== RESET + BASE ===== */
+* {
+    box-sizing: border-box; /* Устанавливает способ подсчёта ширины и высоты элементов. border-box включает padding и border в общую ширину/высоту. */
+}
+
+body {
+    margin: 0; /* Убирает стандартные отступы браузера вокруг страницы */
+    padding: 0; /* Убирает стандартные внутренние отступы браузера */
+    background-color: #0d1117; /* Задаёт тёмный фон страницы */
+    font-family: "Courier New", Courier, monospace; /* Устанавливает шрифт с фиксированной шириной (моноширинный) */
+    color: #c9d1d9; /* Цвет текста на странице */
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    position: relative; /* нужен для корректной работы z-index */
+    z-index: 3; /* поверх всех звезд и комет */
+    max-width: 900px; /* Максимальная ширина контейнера */
+    margin: 40px auto; /* Центрирует контейнер горизонтально и добавляет верхний/нижний отступ 40px */
+    padding: 30px; /* Внутренние отступы вокруг содержимого */
+    background-color: #161b22; /* Цвет фона контейнера */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 0 0 1px #30363d; /* Лёгкая рамка с тенью вокруг контейнера */
+}
+
+/* ===== HEADER / NAV ===== */
+header {
+    margin-bottom: 30px; /* Отступ снизу у шапки */
+}
+
+nav {
+    display: flex; /* Выстраивает элементы меню в ряд */
+    gap: 20px; /* Расстояние между элементами меню */
+}
+
+nav a {
+    color: #58a6ff; /* Цвет ссылок в навигации */
+    text-decoration: none; /* Убирает стандартное подчёркивание ссылок */
+}
+
+nav a::before {
+    content: "<a> "; /* Добавляет текст "<a> " перед ссылкой для декоративного эффекта */
+    color: #8b949e; /* Цвет добавленного текста */
+}
+
+nav a::after {
+    content: " </a>"; /* Добавляет текст " </a>" после ссылки */
+    color: #8b949e; /* Цвет добавленного текста */
+}
+
+nav a:hover {
+    color: #79c0ff; /* Цвет ссылки при наведении мыши */
+}
+
+/* ===== TITLES ===== */
+h1, h2 {
+    font-weight: normal; /* Делает текст заголовков нормальным по толщине */
+    margin: 20px 0 10px; /* Отступ сверху 20px, справа/слева 0, снизу 10px */
+    color: #e6edf3; /* Цвет заголовков */
+}
+
+h1::before {
+    content: "<h1> "; /* Добавляет декоративный тег перед заголовком */
+    color: #7ee787; /* Цвет декоративного текста */
+}
+
+h1::after {
+    content: " </h1>"; /* Добавляет декоративный тег после заголовка */
+    color: #7ee787;
+}
+
+h2::before {
+    content: "<h2> ";
+    color: #7ee787;
+}
+
+h2::after {
+    content: " </h2>";
+    color: #7ee787;
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+    margin: 6px 0; /* Отступы сверху и снизу для абзацев */
+    color: #c9d1d9; /* Цвет текста абзацев */
+}
+
+p::before {
+    content: "<p> "; /* Декоративный тег перед абзацем */
+    color: #8b949e;
+}
+
+p::after {
+    content: " </p>"; /* Декоративный тег после абзаца */
+    color: #8b949e;
+}
+
+/* ===== LIST ===== */
+ul {
+    list-style: none; /* Убирает стандартные маркеры списка */
+    padding-left: 20px; /* Отступ слева для списка */
+}
+
+ul::before {
+    content: "<ul>"; /* Декоративный тег перед списком */
+    display: block; /* Отображается как отдельный блок */
+    color: #8b949e;
+}
+
+ul::after {
+    content: "</ul>"; /* Декоративный тег после списка */
+    display: block;
+    color: #8b949e;
+}
+
+li {
+    margin: 4px 0; /* Отступы сверху и снизу для элементов списка */
+}
+
+li::before {
+    content: "<li> "; /* Декоративный тег перед элементом списка */
+    color: #8b949e;
+}
+
+li::after {
+    content: " </li>"; /* Декоративный тег после элемента списка */
+    color: #8b949e;
+}
+
+/* ===== LINKS ===== */
+section a {
+    color: #d2a8ff; /* Цвет ссылок внутри секций */
+    text-decoration: none; /* Убирает подчёркивание ссылок */
+}
+
+section a::before {
+    content: "<a> "; /* Декоративный тег перед ссылкой */
+    color: #8b949e;
+}
+
+section a::after {
+    content: " </a>"; /* Декоративный тег после ссылки */
+    color: #8b949e;
+}
+
+section a:hover {
+    color: #f2cc60; /* Цвет ссылки при наведении мыши */
+}
+
+/* ===== SECTIONS ===== */
+section {
+    margin-bottom: 30px; /* Отступ снизу у секций */
+}
+
+/* ===== TYPEWRITER EFFECT ===== */
+h1 {
+    display: inline-block; /* Делает заголовок строчным блочным элементом для анимации */
+    overflow: hidden; /* Скрывает часть текста, которая выходит за пределы контейнера */
+    white-space: nowrap; /* Запрещает перенос текста на новую строку */
+    border-right: 2px solid #c9d1d9; /* Создаёт вертикальный курсор справа от текста */
+    max-width: 0; /* Начальная ширина текста для анимации */
+    animation:
+        typing 3s steps(30, end) forwards, /* Эффект печати текста */
+        blink 1s steps(1) 3s 3, /* Мигание курсора */
+        hideCursor 0.1s linear 6s forwards; /* Скрытие курсора в конце */
+}
+
+@keyframes typing {
+    from { max-width: 0; } /* Начальная ширина текста */
+    to   { max-width: 100%; } /* Конечная ширина текста */
+}
+
+@keyframes blink {
+    0%   { border-color: transparent; } /* Курсор невидим */
+    50%  { border-color: #c9d1d9; } /* Курсор видим */
+    100% { border-color: transparent; } /* Курсор снова невидим */
+}
+
+@keyframes hideCursor {
+    to { border-right-color: transparent; } /* Убирает курсор после анимации */
+}
+
+/* звезды */
+.star {
+    position: fixed; /* фиксированные на экране */
+    border-radius: 50%; /* круглая форма */
+    z-index: 2;
+    animation: twinkle linear infinite alternate; /* только мерцание */
+}
+
+/* мерцание */
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
